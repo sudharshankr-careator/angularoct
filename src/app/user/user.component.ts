@@ -18,6 +18,7 @@ export class UserComponent implements OnInit {
     age: 22,
     id: 1,
   };
+  isColored: boolean;
   constructor() {
     this.user = {
       name: 'mohan',
@@ -25,6 +26,7 @@ export class UserComponent implements OnInit {
       id: 1,
     };
     this.userEvent = new EventEmitter();
+    this.isColored = true;
   }
 
   ngOnInit(): void {}

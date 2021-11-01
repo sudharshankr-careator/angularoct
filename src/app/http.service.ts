@@ -8,8 +8,6 @@ import { Observable } from 'rxjs';
 export class HttpService {
   constructor(private http: HttpClient) {}
   getData(url: string) {
-    this.http.get(url).subscribe((res) => {
-      console.log(res);
-    });
+    return this.http.get(url);
   }
 }

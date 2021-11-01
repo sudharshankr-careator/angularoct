@@ -2,4 +2,40 @@
 <input placeholder="name" [(ngModel)]="user.name" />
 <input placeholder="age" [(ngModel)]="user.age" />
 <input placeholder="id" [(ngModel)]="user.id" />
-<app-user [user]="user" (userEvent)="handleEvent($event)"></app-user>
+<button (click)="getPosts()">Cick</button>
+<ng-container *ngIf="isHidden">
+  <app-user [user]="user" (userEvent)="handleEvent($event)"></app-user>
+</ng-container>
+
+<!-- <ul *ngFor="let post of posts | async; let i = index">
+  <li>{{ i }}</li>
+  <li>{{ post.id }}</li>
+  <li>{{ post.title }}</li>
+  <li>{{ post.body }}</li>
+</ul> -->
+<a routerLink="/one">one</a>
+<a routerLink="/two">two</a>
+<a routerLink="/three">third</a>
+
+<div class="split left">
+  <div class="centered">
+    <img
+      src="https://cdn1.iconfinder.com/data/icons/avatars-1-5/136/60-512.png"
+      alt="Avatar woman"
+    />
+    <h2>Jane Flex</h2>
+    <p>Some text.</p>
+  </div>
+</div>
+
+<div class="split right">
+  <div class="centered">
+    <img
+      src="https://cdn3.iconfinder.com/data/icons/avatars-round-flat/33/man5-512.png"
+      alt="Avatar man"
+    />
+    <h2>John Doe</h2>
+    <p>Some text here too.</p>
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpService } from './http.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { HttpService } from './http.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'angular oct pra';
   objvalue = {
     fname: 'mohan',
@@ -19,9 +19,15 @@ export class AppComponent {
     id: 1,
   };
   url = 'https://jsonplaceholder.typicode.com/posts';
+  isHidden: boolean = true;
+  posts: any = this.httpService.getData(this.url);
   constructor(private httpService: HttpService) {}
-
+  ngOnInit() {
+    //this.getPosts();
+    console.log(this.posts);
+  }
   handleEvent(event: any) {
     console.log(event);
   }
+  async getPosts() {}
 }
