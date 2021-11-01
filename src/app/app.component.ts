@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HttpService } from './http.service';
 
 @Component({
@@ -21,7 +22,7 @@ export class AppComponent implements OnInit {
   url = 'https://jsonplaceholder.typicode.com/posts';
   isHidden: boolean = true;
   posts: any = this.httpService.getData(this.url);
-  constructor(private httpService: HttpService) {}
+  constructor(private httpService: HttpService, private route: Router) {}
   ngOnInit() {
     //this.getPosts();
     console.log(this.posts);
@@ -30,4 +31,7 @@ export class AppComponent implements OnInit {
     console.log(event);
   }
   async getPosts() {}
+  goFour(url: string = '/four') {
+    this.route.navigateByUrl(url);
+  }
 }
