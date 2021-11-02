@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -12,8 +12,22 @@ import { ThreeComponent } from './three/three.component';
 import { FourComponent } from './four/four.component';
 
 @NgModule({
-  declarations: [AppComponent, TruncatePipe, UserComponent, OneComponent, TwoComponent, ThreeComponent, FourComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    TruncatePipe,
+    UserComponent,
+    OneComponent,
+    TwoComponent,
+    ThreeComponent,
+    FourComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,9 +1,10 @@
-<button (click)="goFour()">$$4</button>
+<button (click)="modifyForm()">$$4</button>
 <h3>{{ today | date: "Y:M:d" }}</h3>
-<input placeholder="name" [(ngModel)]="user.name" />
+<!-- <input placeholder="name" [(ngModel)]="user.name" />
 <input placeholder="age" [(ngModel)]="user.age" />
 <input placeholder="id" [(ngModel)]="user.id" />
-<button (click)="getPosts()">Cick</button>
+<button (click)="getPosts()">Cick</button> -->
+<input type="text" [formControl]="test" />
 <ng-container *ngIf="isHidden">
   <app-user [user]="user" (userEvent)="handleEvent($event)"></app-user>
 </ng-container>

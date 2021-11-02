@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpService } from './http.service';
 
@@ -22,6 +23,7 @@ export class AppComponent implements OnInit {
   url = 'https://jsonplaceholder.typicode.com/posts';
   isHidden: boolean = true;
   posts: any = this.httpService.getData(this.url);
+  test = new FormControl('mohan');
   constructor(private httpService: HttpService, private route: Router) {}
   ngOnInit() {
     //this.getPosts();
@@ -33,5 +35,8 @@ export class AppComponent implements OnInit {
   async getPosts() {}
   goFour(url: string = '/four') {
     this.route.navigateByUrl(url);
+  }
+  modifyForm() {
+    this.test.setValue('krishna');
   }
 }
